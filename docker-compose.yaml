@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: pg_itms
+    environment:
+      POSTGRES_USER: itms
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: itms
+    ports:
+      - "5433:5432"  # Change port mapping to 5433:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
